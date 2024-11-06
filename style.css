@@ -1,0 +1,146 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Evita rolagem na página */
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo do vídeo de fundo */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* Faz o vídeo cobrir toda a tela */
+    z-index: -1; /* Garante que o vídeo fique no fundo */
+    pointer-events: none; /* Evita interação com o vídeo */
+}
+
+/* Estilo da área de conteúdo */
+.container {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo levemente transparente */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; /* Garante que o conteúdo fique acima do vídeo */
+    color: #333;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+/* Estilo dos botões */
+.buttons {
+    margin: 30px 0;
+    display: flex;
+    gap: 40px;
+    justify-content: center; /* Alinha os botões no centro */
+}
+
+button {
+    padding: 20px;
+    font-size: 50px;  /* Ajuste no tamanho da fonte para garantir a consistência */
+    cursor: pointer;
+    border: none;
+    border-radius: 80px;
+    transition: opacity 0.5s ease-in-out;
+    color: white;
+    width: 120px; /* Define um tamanho fixo para todos os botões */
+    height: 120px; /* Define a altura para todos os botões */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+/* Cores específicas para cada botão */
+#rock {
+    background-color: rgb(5, 196, 196);
+}
+
+#paper {
+    background-color: rgb(231, 37, 101);
+}
+
+#scissors {
+    background-color: rgb(30, 223, 30);
+}
+
+/* Estilo dos textos de pontuação */
+p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.my-score span {
+    color: blueviolet;
+}
+
+.machine-score span {
+    color: red;
+}
+
+
+/* Media queries para ajustar o layout em dispositivos móveis */
+@media (max-width: 76px) {
+    .container {
+        padding: 15px;
+        width: 95%; /* Ajusta a largura em telas menores */
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 25px; /* Tamanho menor para dispositivos móveis */
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.2em;
+    }
+
+    .buttons {
+        gap: 5px;
+    }
+
+    button {
+        padding: 8px;
+        font-size: 20px; /* Tamanho ainda menor */
+        width: 70px;
+        height: 70px;
+    }
+
+    .my-score, .machine-score {
+        font-size: 0.9em;
+    }
+}
